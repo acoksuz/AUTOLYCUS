@@ -45,19 +45,19 @@ The current commit-id of the repository is b329574.
 ### Set up the environment
 
 1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries. 
-  sudo apt update
-  sudo apt install python3
-  sudo apt install python3-pip
-  pip3 install notebook
-  jupyter notebook
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+pip3 install notebook
+jupyter notebook
 
-2. Download the repository using the command
-   gh repo clone acoksuz/AUTOLYCUS
+3. Download the repository using the command
+gh repo clone acoksuz/AUTOLYCUS
 
-3. Run the following command to install required libraries used in the proposed attack
-   pip3 install lime matplotlib numpy pickle seaborn shap scipy sklearn
+4. Run the following command to install required libraries used in the proposed attack
+pip3 install lime matplotlib numpy pickle seaborn shap scipy sklearn
 
-4. Run all the scripts in "Experiments.ipynb" from top to bottom.
+5. Run all the scripts in "Experiments.ipynb" from top to bottom.
 
 ### Testing the Environment
 
