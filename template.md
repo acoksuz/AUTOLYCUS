@@ -49,12 +49,12 @@ sudo apt update\
 sudo apt install python3\
 sudo apt install python3-pip\
 pip3 install notebook\
-jupyter notebook
+jupyter notebook\
 
-3. Download the repository using the command
+3. Download the repository using the command\
 gh repo clone acoksuz/AUTOLYCUS
 
-4. Run the following command to install required libraries used in the proposed attack
+4. Run the following command to install required libraries used in the proposed attack\
 pip3 install lime matplotlib numpy pickle seaborn shap scipy sklearn
 
 5. Run all the scripts in "Experiments.ipynb" from top to bottom.
