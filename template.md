@@ -24,7 +24,7 @@ This artifact does not contain specific hardware requirements.
 The experiments are conducted on Apple M1 Macbook Air (A2337) with macOS 14 Sonoma and 8 GB ram.
 Python notebook IDE (e.g. Jupyter) with Python 3.3 and higher is required to run the code.
 Dependent libraries in the code are lime, matplotlib, numpy, pickle, sklearn, scipy, seaborn, shap. 
-The version numbers of these libraries are further specified in the requirements.txt of GitHub repository.
+The version numbers of these libraries are further specified in the "requirements.txt" of GitHub repository.
 All used datasets are provided in the repository.
 
 ### Estimated Time and Storage Consumption
@@ -36,7 +36,7 @@ Our observation is that LIME and SHAP explanations are returned faster on macOS 
 ## Environment
 Python notebook IDE (e.g. Jupyter) with Python 3.3 and higher is required to run the code.
 In a regular Python3 environment install the following libraries using pip or conda commands: lime, matplotlib, numpy, pickle, sklearn, scipy, seaborn, shap
-We provided a commented script in the beginning of 'Experiments.ipynb' notebook. If any of the libraries is missing, the code can be uncommented and run for installation.
+We provided a commented script in the beginning of "Experiments.ipynb" notebook. If any of the libraries is missing, the code can be uncommented and run for installation.
 
 ### Accessibility
 This artifact and any of its future updates can be accessed on https://github.com/acoksuz/AUTOLYCUS/
@@ -44,12 +44,12 @@ The current commit-id of the repository is b329574.
 
 ### Set up the environment
 
-1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries.\ 
+1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries\ 
 sudo apt update\
 sudo apt install python3\
 sudo apt install python3-pip\
 pip3 install notebook\
-jupyter notebook\
+jupyter notebook
 
 3. Download the repository using the command\
 gh repo clone acoksuz/AUTOLYCUS
@@ -80,15 +80,7 @@ sample_set_sizes = [1,2,3,4,5] can be used for plotting (with the last cell in "
 
 ### Main Results and Claims
 
-The performance of AUTOLYCUS is influenced by the careful adjustment of the following attack configuration and model parameters: 
-(i) ensuring a sufficiently high number of queries is sent,         
-(ii) selecting an adequate number of features (𝑘) for perturbation,
-guided by the distribution of feature importance;                   (less entropy is better)
-(iii) incorporating sufficient number of (iv) informative auxiliary samples; 
-(v) considering the complexity of the models -lower complexity models are extracted easier-, including any unknowns or parameters in neural network terminology; 
-(vi) ensuring the accuracy of the model, 
-(vii) optimizing the selection of 𝛿 values especially when SHAP is used as the XAI tool. 
-These factors collectively contribute to the efficacy of AUTOLYCUS in adversarial settings. (Higher is better for almost all settings, except for complexity)
+The performance of AUTOLYCUS is influenced by the careful adjustment of the following attack configuration and model parameters: (i) ensuring a sufficiently high number of queries is sent, (ii) selecting an adequate number of features (𝑘) for perturbation,guided by the distribution of feature importance; (less entropy is better) (iii) incorporating sufficient number of (iv) informative auxiliary samples; (v) considering the complexity of the models -lower complexity models are extracted easier-, including any unknowns or parameters in neural network terminology; (vi) ensuring the accuracy of the model, (vii) optimizing the selection of 𝛿 values especially when SHAP is used as the XAI tool. These factors collectively contribute to the efficacy of AUTOLYCUS in adversarial settings. (Higher is better for almost all settings, except for complexity)
 
 Thanks to additional information provided by the explainers, AUTOLYCUS requires less queries compared to SOTA model extraction attacks mentioned in the paper.
 Additionally, LIME explanations provide higher utility in our particular attack model compared to SHAP explanations.
