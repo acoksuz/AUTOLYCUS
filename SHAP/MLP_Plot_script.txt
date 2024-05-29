@@ -1,0 +1,70 @@
+query_limit = [100,250,500,1000]
+dataset_names = {'Breast Cancer Dataset':'breast', 
+                 'Adult Income Dataset':'adult', 
+                 'Nursery Dataset':'nursery', 
+                 'Mushroom Dataset':'mushroom'} 
+if dataset_name == 'breast':
+    a, b, samples_mega_breast = unpickling(dataset_name, 'mlp')
+    dt_t = mlp(hidden_layer_sizes = (20,), activation='relu', solver='adam', max_iter=10000).fit(X_train.values, y_train)
+    accs_zero_breast, sims_zero_breast = zero_sets(samples_mega_breast, 'mlp', dt_t)
+    accuracies_breast, rtest_sims_breast = argmaxing((accs_zero_breast + a), (sims_zero_breast + b))
+elif dataset_name == 'adult':
+    a, b, samples_mega_adult = unpickling(dataset_name, 'mlp')
+    dt_t = mlp(hidden_layer_sizes = (20,), activation='relu', solver='adam', max_iter=10000).fit(X_train.values, y_train)
+    accs_zero_adult, sims_zero_adult = zero_sets(samples_mega_adult, 'mlp', dt_t)
+    accuracies_adult, rtest_sims_adult = argmaxing((accs_zero_adult + a), (sims_zero_adult + b))
+elif dataset_name == 'nursery':
+    a, b, samples_mega_nursery = unpickling(dataset_name, 'mlp')
+    dt_t = mlp(hidden_layer_sizes = (20,), activation='relu', solver='adam', max_iter=10000).fit(X_train.values, y_train)
+    accs_zero_nursery, sims_zero_nursery = zero_sets(samples_mega_nursery, 'mlp', dt_t)
+    accuracies_nursery, rtest_sims_nursery = argmaxing((accs_zero_nursery + a), (sims_zero_nursery + b))
+elif dataset_name == 'mushroom':
+    a, b, samples_mega_mushroom = unpickling(dataset_name, 'mlp')
+    dt_t = mlp(hidden_layer_sizes = (20,), activation='relu', solver='adam', max_iter=1000).fit(X_train.values, y_train)
+    accs_zero_mushroom, sims_zero_mushroom = zero_sets(samples_mega_mushroom, 'mlp', dt_t)
+    accuracies_mushroom, rtest_sims_mushroom = argmaxing((accs_zero_mushroom + a), (sims_zero_mushroom + b))
+
+# Run the above code for four different datasets, then uncomment the following plot
+    
+# i,j = 0,5 # (len(query_limit)+1)
+# k = 0
+
+# data1 = rtest_sims_breast[i:j]
+# data2 = rtest_sims_adult[i:j]
+# data3 = rtest_sims_nursery[i:j]
+# data4 = rtest_sims_mushroom[i:j]
+
+# data0 = data1 + data2 + data3 + data4
+
+# x_axis = [0,100,250,500,1000,0,100,250,500,1000,0,100,250,500,1000,0,100,250,500,1000]
+# #x_axis = [0,10,25,50,100,0,10,25,50,100,0,10,25,50,100,0,10,25,50,100,0,10,25,50,100]
+# y_axis = [0,0.2,0.4,0.6,0.8,1.0]
+
+# plt.rcParams['figure.dpi'] = 600
+# plt.rcParams['savefig.dpi'] = 600
+# fig, ax = plt.subplots(figsize=(16, 3))
+# medianprops = dict(linewidth=1.5, color='blue')
+# ax.boxplot(data0,0,'', medianprops=medianprops)
+# ax.yaxis.grid(True)
+# ax.set_xticklabels(x_axis)
+
+# plt.axvline(x = 5.5, color = 'black')
+# plt.axvline(x = 10.5, color = 'black')
+# plt.axvline(x = 15.5, color = 'black')
+
+# i = 0
+# for x in dataset_names.keys(): #for x in range(5):
+#     label = x # label = model_names[x]
+#     plt.annotate(label, # this is the text
+#                  (5*i+3,0.05), # these are the coordinates to position the label
+#                  textcoords="offset points", # how to position the text
+#                  xytext=(1,1.3), # distance from text to points (x,y)
+#                  ha='center', fontsize=12, color='red')
+#     i += 1
+    
+# ax.set_ylim(0,1.05)
+# ax.set_xticklabels(x_axis,fontsize=12)
+# ax.set_yticklabels(y_axis,fontsize=12)
+# ax.set_xlabel('Number of Queries', fontsize=12)
+# ax.set_ylabel('Similarity', fontsize=12)
+# plt.show()
