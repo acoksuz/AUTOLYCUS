@@ -1,5 +1,5 @@
 In this repository, you can find the data, code and figures related to the paper: AUTOLYCUS: Exploiting Explainable Artificial Intelligence (XAI)
-for Model Extraction Attacks against Interpretable Models.
+for Model Extraction Attacks against Interpretable Models. (will be published on PETs 2024)
 
 1. You can experiment on the attack using 'Experiments.ipynb'.
 2. Datasets can be included in the code directly or manually added into 'data' folder. Make sure they follow a similar format with other datasets for explainer compatibility.
