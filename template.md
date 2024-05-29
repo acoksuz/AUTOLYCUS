@@ -45,10 +45,10 @@ The current commit-id of the repository is b329574.
 ### Set up the environment
 
 1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries. 
-sudo apt update
-sudo apt install python3
-sudo apt install python3-pip
-pip3 install notebook
+sudo apt update\n
+sudo apt install python3\n
+sudo apt install python3-pip\n
+pip3 install notebook\n
 jupyter notebook
 
 3. Download the repository using the command
