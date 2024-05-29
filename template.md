@@ -35,7 +35,7 @@ Our observation is that LIME and SHAP explanations are returned faster on macOS 
 
 ## Environment
 Python notebook IDE (e.g. Jupyter) with Python 3.3 and higher is required to run the code.
-In a regular Python3 environment install the following libraries using pip or conda commands: lime, matplotlib, numpy, pickle, sklearn, scipy, seaborn, shap
+In a regular Python3 environment install the following libraries using pip or conda commands: lime, matplotlib, numpy, pickle, sklearn, scipy, seaborn, shap.
 We provided a commented script in the beginning of "Experiments.ipynb" notebook. If any of the libraries is missing, the code can be uncommented and run for installation.
 
 ### Accessibility
