@@ -7,7 +7,8 @@ Artifacts HotCRP Id: **#17**
 Requested Badge: **Reproducible**
 
 ## Description
-As an artifact, we provide a public GitHub repository which contains the source code, figures and datasets used in our paper. Its link is https://github.com/acoksuz/AUTOLYCUS
+As an artifact, we provide a public GitHub repository and a Docker image which contain the source code, figures and datasets used in our paper. Its link is https://github.com/acoksuz/AUTOLYCUS
+https://hub.docker.com/r/acoksuz/autolycus/tags
 
 ### Security/Privacy Issues and Ethical Concerns
 There are no ethical concerns related to this artifact. 
@@ -35,7 +36,7 @@ Our observation is that LIME and SHAP explanations are returned faster on macOS 
 ## Environment
 Python notebook IDE (e.g. Jupyter) with Python 3.3 and higher is required to run the code.
 In a regular Python3 environment install the following libraries using pip or conda commands: lime, matplotlib, numpy, pickle, sklearn, scipy, seaborn, shap.
-We provided a commented script in the beginning of "Experiments.ipynb" notebook. If any of the libraries is missing, the code can be uncommented and run for installation.
+Use the following command for easy installation: pip3 install -r requirements.txt
 
 ### Accessibility
 This artifact and any of its future updates can be accessed on https://github.com/acoksuz/AUTOLYCUS/
@@ -43,17 +44,26 @@ The current commit-id of the repository is b329574.
 
 ### Set up the environment
 
-1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries  
-sudo apt update\
-sudo apt install python3\
-sudo apt install python3-pip\
-pip3 install notebook\
+A. Docker Route
+
+1. Please download and install Docker Desktop for this route. Then, run the following commands using terminal on the location where the Dockerfile is located. This will build and run a Docker image from the Dockerfile.
+
+docker build . --no-cache -t autolycus
+docker run -p 8888:8888 autolycus 
+
+B. Manual Route
+
+1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries.  
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+pip3 install notebook
 jupyter notebook
 
-2. Download the repository using the command\
+2. Download the repository using the command
 gh repo clone acoksuz/AUTOLYCUS
 
-3. Run the following command to install required libraries used in the proposed attack\
+3. Run the following command to install required libraries used in the proposed attack
 pip3 install -r requirements.txt
 
 4. Run individual notebooks for experiments or for manual configurations run all the scripts in "Experiments.ipynb" from top to bottom.
