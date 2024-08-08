@@ -42,7 +42,7 @@ Use the following command for easy installation: pip3 install -r requirements.tx
 
 ### Accessibility
 This artifact and any of its future updates can be accessed on https://github.com/acoksuz/AUTOLYCUS/
-The current commit-id of the repository is b329574.
+The current commit-id of the repository is 936611498be19c8a46cbc83fed794db8537f6527.
 
 ### Set up the environment
 
