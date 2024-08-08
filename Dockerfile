@@ -1,6 +1,7 @@
 # Use the official Jupyter base image
 FROM jupyter/base-notebook:latest
 
+USER root
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -9,6 +10,8 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
+
+USER jovyan
 
 # Clone your GitHub repository
 RUN git clone https://github.com/acoksuz/AUTOLYCUS.git /home/jovyan/AUTOLYCUS
