@@ -7,7 +7,9 @@ Artifacts HotCRP Id: **#17**
 Requested Badge: **Reproducible**
 
 ## Description
-As an artifact, we provide a public GitHub repository and a Docker image which contain the source code, figures and datasets used in our paper. Its link is https://github.com/acoksuz/AUTOLYCUS
+As an artifact, we provide a public GitHub repository and a Docker image which contain the source code, figures and datasets used in our paper. 
+The links are: \
+https://github.com/acoksuz/AUTOLYCUS \
 https://hub.docker.com/r/acoksuz/autolycus/tags
 
 ### Security/Privacy Issues and Ethical Concerns
@@ -46,18 +48,17 @@ The current commit-id of the repository is b329574.
 
 A. Docker Route
 
-1. Please download and install Docker Desktop for this route. Then, run the following commands using terminal on the location where the Dockerfile is located. This will build and run a Docker image from the Dockerfile.
-
-docker build . --no-cache -t autolycus
+1. Please download and install Docker Desktop for this route. Then, run the following commands using terminal on the location where the Dockerfile is located. This will build and run a Docker image from the Dockerfile. \
+docker build . --no-cache -t autolycus \
 docker run -p 8888:8888 autolycus 
 
 B. Manual Route
 
 1. Run the following commands on terminal to install up-to-date Python, Pip and Jupyter Notebook libraries.  
-sudo apt update
-sudo apt install python3
-sudo apt install python3-pip
-pip3 install notebook
+sudo apt update \
+sudo apt install python3 \
+sudo apt install python3-pip \
+pip3 install notebook \
 jupyter notebook
 
 2. Download the repository using the command
@@ -110,21 +111,21 @@ When n(s) are increased from 1 to 5, extractions get better due to more informed
 explanation_tool, n, k, query_limit are all configurable parameters. Except for explanation_tool, all of them can be initialized as a list to see their individual impacts on extractions.
 
 #### Experiment 1: Impact of number of features (k) on similarity
-Run "experiment_1.ipynb" and check the plot at the bottom.
+Run "experiment_1.ipynb" and check the plot at the bottom. \
 Keep every parameter fixed while providing a list for k = [1,2,...,m] 
 Expected result: As k increases, traversal algorithm perturbs more features. Perturbations with more features increase over-fitting to the decision boundaries of the target model, resulting with better extractions.
 
 #### Experiment 2: Impact of model/dataset complexity on similarity
-Run "experiment_2.ipynb" and check the plot at the bottom.
+Run "experiment_2.ipynb" and check the plot at the bottom. \
 Expected result: Since Adult Income Dataset has more features and possible values for each feature, its solution space is larger than Nursery dataset. Therefore with the same amount of query, models trained on Nursery dataset will be extracted faster compared to their counterparts on Adult Income dataset. 
 
 #### Experiment 3: Impact of number of queries (Q) on similarity
-Run "experiment_3.ipynb" and check the plot at the bottom.
+Run "experiment_3.ipynb" and check the plot at the bottom. \
 Expected result: Increasing the number of queries allows better traversal of solution space and results with more informed and similar models to the target model.
 
 #### Experiment 4: Impact of auxiliary dataset size (n) on similarity
 Run "experiment_4.ipynb" and check the plot at the bottom.
-Keep every parameter fixed while providing a list for sample_set_sizes = [1,2,3,4,5]
+Keep every parameter fixed while providing a list for sample_set_sizes = [1,2,3,4,5] \
 Expected result: Increasing the size of auxiliary data provides more and more diverse examples to explore for the traversal algorithm. Even without perturbation, these diverse examples act as a training data. Furthermore, they provide an opportunity to attack the target model from multiple angles instead of few angles which might keep certain decision boundaries unexplored.
 
 ## Limitations
