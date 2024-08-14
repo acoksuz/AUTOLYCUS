@@ -225,7 +225,6 @@ def traverse_explanations_SHAP(sample_set, explainer, model, n_visits_lb, n_visi
                     num = random.random()
                     tmp0 = cpys[0][sort_index[i]] + epsilon_set[sort_index[i]]
                     tmp1 = cpys[0][sort_index[i]] - epsilon_set[sort_index[i]]
-                    break
                     if not isCat[sort_index[i]]: 
                         cond1 = True
                     else:
@@ -610,7 +609,7 @@ def run_attack_auto(wd, wm, et, hms, sss, nfe, ql, so): # make sure the types ar
     else:
         repetition = 10
     
-    relax_factor = 0.8
+    relax_factor = 0.5
     lb_set = list(map(lambda x: int((x//n_classes)*(1-relax_factor)+1), query_limit))
     ub_set = list(map(lambda x: int((x//n_classes)*(n_classes+relax_factor)+1), query_limit))
     depth = 15
